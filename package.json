@@ -1,0 +1,32 @@
+{
+  "name": "herdr-omo-agent",
+  "version": "1.0.0",
+  "description": "Register OmO sessions as coding agents in Herdr.",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "extension.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "bun test",
+    "check": "node --check extension.js && bun test"
+  },
+  "pi": {
+    "extensions": [
+      "./extension.js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/islee23520/herdr-omo-agent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/islee23520/herdr-omo-agent/issues"
+  },
+  "homepage": "https://github.com/islee23520/herdr-omo-agent#readme",
+  "engines": {
+    "node": ">=20"
+  }
+}
