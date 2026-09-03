@@ -59,14 +59,16 @@ export function createHerdrOmoAgentExtension(environment = process.env) {
     }
 
     async function report(paneId, state) {
-      await invoke(paneId, "report-agent", [
-        "--source",
-        SOURCE,
-        "--agent",
-        AGENT,
-        "--state",
-        state,
-      ])
+      for (const source of [SOURCE, INTEGRATION_SOURCE]) {
+        await invoke(paneId, "report-agent", [
+          "--source",
+          source,
+          "--agent",
+          AGENT,
+          "--state",
+          state,
+        ])
+      }
     }
 
     async function repairPane(paneId, state = "idle") {

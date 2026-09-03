@@ -91,6 +91,20 @@ describe("herdr-omo-agent", () => {
       args: [
         "pane",
         "report-agent",
+        "w1:p2",
+        "--source",
+        "herdr:pi",
+        "--agent",
+        "omo",
+        "--state",
+        "idle",
+      ],
+    })
+    expect(fixture.calls).toContainEqual({
+      command: "/opt/herdr",
+      args: [
+        "pane",
+        "report-agent",
         "w2:p3",
         "--source",
         "herdr-omo-agent",
@@ -134,49 +148,16 @@ describe("herdr-omo-agent", () => {
     await fixture.handlers.get("agent_settled")()
     await fixture.handlers.get("session_shutdown")()
 
-    expect(fixture.calls.filter((call) => call.args[1] === "report-agent")).toEqual([
-      {
-        command: "/opt/herdr",
-        args: [
-          "pane",
-          "report-agent",
-          "w1:p2",
-          "--source",
-          "herdr-omo-agent",
-          "--agent",
-          "omo",
-          "--state",
-          "working",
-        ],
-      },
-      {
-        command: "/opt/herdr",
-        args: [
-          "pane",
-          "report-agent",
-          "w1:p2",
-          "--source",
-          "herdr-omo-agent",
-          "--agent",
-          "omo",
-          "--state",
-          "idle",
-        ],
-      },
-      {
-        command: "/opt/herdr",
-        args: [
-          "pane",
-          "report-agent",
-          "w1:p2",
-          "--source",
-          "herdr-omo-agent",
-          "--agent",
-          "omo",
-          "--state",
-          "idle",
-        ],
-      },
+    const reports = fixture.calls
+      .filter((call) => call.args[1] === "report-agent")
+      .map((call) => ({ source: call.args[4], state: call.args[8] }))
+    expect(reports).toEqual([
+      { source: "herdr-omo-agent", state: "working" },
+      { source: "herdr:pi", state: "working" },
+      { source: "herdr-omo-agent", state: "idle" },
+      { source: "herdr:pi", state: "idle" },
+      { source: "herdr-omo-agent", state: "idle" },
+      { source: "herdr:pi", state: "idle" },
     ])
   })
 
