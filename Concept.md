@@ -1,6 +1,6 @@
 # Herdr OMO Agent
 
-Herdr OMO Agent is an installable OmO extension that reports OmO sessions to Herdr using the canonical `pi` agent identity and the user-facing `omo` display label.
+Herdr OMO Agent is an installable OmO extension that reports OmO sessions to Herdr using the canonical `omo` agent identity.
 
 ## Stack
 

@@ -45,7 +45,7 @@ describe("findOmoPaneIds", () => {
 })
 
 describe("herdr-omo-agent", () => {
-  test("registers the current and already-running OmO panes as pi", async () => {
+  test("registers the current and already-running OmO panes as omo", async () => {
     const fixture = fakePi(
       "node /opt/homebrew/bin/omo HERDR_PANE_ID=w1:p2\n" +
         "node /opt/homebrew/bin/omo HERDR_PANE_ID=w2:p3",
@@ -69,7 +69,7 @@ describe("herdr-omo-agent", () => {
         "--source",
         "herdr-omo-agent",
         "--agent",
-        "pi",
+        "omo",
         "--state",
         "idle",
       ],
@@ -83,7 +83,7 @@ describe("herdr-omo-agent", () => {
         "--source",
         "herdr-omo-agent",
         "--agent",
-        "pi",
+        "omo",
         "--state",
         "working",
       ],
@@ -97,7 +97,7 @@ describe("herdr-omo-agent", () => {
         "--source",
         "herdr-omo-agent:display-herdr-pi",
         "--agent",
-        "pi",
+        "omo",
         "--applies-to-source",
         "herdr:pi",
         "--display-agent",
@@ -132,7 +132,7 @@ describe("herdr-omo-agent", () => {
           "--source",
           "herdr-omo-agent",
           "--agent",
-          "pi",
+          "omo",
           "--state",
           "working",
         ],
@@ -146,7 +146,7 @@ describe("herdr-omo-agent", () => {
           "--source",
           "herdr-omo-agent",
           "--agent",
-          "pi",
+          "omo",
           "--state",
           "idle",
         ],
@@ -160,7 +160,7 @@ describe("herdr-omo-agent", () => {
           "--source",
           "herdr-omo-agent",
           "--agent",
-          "pi",
+          "omo",
           "--state",
           "idle",
         ],

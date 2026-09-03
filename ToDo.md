@@ -1,6 +1,12 @@
 # ToDo
 
-## Current module: installable agent registration
+## Current module: first-class omo identity
+
+- [x] Report `--agent omo` instead of `pi`.
+- [x] Release leftover `pi` claims on repair.
+- [x] Cover the identity change with tests.
+
+## Previous module: installable agent registration
 
 - [x] Package the OmO lifecycle extension.
 - [x] Add registration for already-running OmO sessions.

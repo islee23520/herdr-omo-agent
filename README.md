@@ -2,12 +2,12 @@
 
 Register [OmO](https://github.com/code-yeongyu/oh-my-openagent) sessions as coding agents in [Herdr](https://github.com/herdrdev/herdr).
 
-The plugin reports the canonical Herdr agent identity as `pi` and uses `omo` as its display label. This keeps compatibility with Herdr's Pi lifecycle integration while making OmO sessions identifiable in pane borders and agent lists.
+The plugin reports the canonical Herdr agent identity as `omo`. This keeps OmO sessions identifiable in pane borders, agent lists, and `herdr agent` targets instead of being claimed as Cursor (from a nested `cursor-agent` helper) or Pi.
 
 ## Requirements
 
 - OmO
-- Herdr with its Pi integration installed
+- Herdr 0.8.3+ with native `omo` agent detection, or a local Herdr build that includes `Agent::Omo`
 - macOS or Linux for automatic discovery of sessions that were already running
 
 ## Install
@@ -26,8 +26,7 @@ The extension automatically reports:
 
 - `working` when an OmO turn starts
 - `idle` when an OmO turn settles
-- `pi` as the canonical Herdr agent
-- `omo` as the display label
+- `omo` as the canonical Herdr agent
 
 ## Already-running OmO sessions
 
@@ -53,7 +52,7 @@ Expected shape:
 omo: [w1:p2] (idle) /path/to/project
 ```
 
-The underlying record uses `agent: pi` and `display_agent: omo`.
+The underlying record uses `agent: omo`.
 
 ## Update
 

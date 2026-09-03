@@ -1,10 +1,10 @@
-const AGENT = "pi"
+const AGENT = "omo"
 const DISPLAY_AGENT = "omo"
 const SOURCE = "herdr-omo-agent"
 const DISPLAY_SOURCE = "herdr-omo-agent:display"
 const INTEGRATION_DISPLAY_SOURCE = "herdr-omo-agent:display-herdr-pi"
 const INTEGRATION_SOURCE = "herdr:pi"
-const LEGACY_AGENT = "omo"
+const LEGACY_AGENT = "pi"
 const LEGACY_SOURCES = ["user:omo", SOURCE]
 const DISPLAY_TTL_MS = "86400000"
 
