@@ -64,6 +64,18 @@ describe("herdr-omo-agent", () => {
       command: "/opt/herdr",
       args: [
         "pane",
+        "release-agent",
+        "w1:p2",
+        "--source",
+        "herdr:pi",
+        "--agent",
+        "pi",
+      ],
+    })
+    expect(fixture.calls).toContainEqual({
+      command: "/opt/herdr",
+      args: [
+        "pane",
         "report-agent",
         "w1:p2",
         "--source",
